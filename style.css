@@ -1,0 +1,986 @@
+body{
+
+    margin:0;
+
+    font-family:'Poppins',sans-serif;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100vh;
+}
+
+
+header{
+
+    background:white;
+
+    padding:15px 30px;
+
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+
+    z-index:10;
+}
+
+
+header h1{
+
+    margin:0;
+}
+
+
+header p{
+
+    margin-top:5px;
+}
+
+
+#visor3D{
+
+    flex:1;
+}
+
+
+footer{
+
+    background:#111;
+
+    color:white;
+
+    text-align:center;
+
+    padding:10px;
+}
+
+
+/* BOTÓN FLOTANTE */
+
+#chatToggle{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    width:65px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2f80ed;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    z-index:1000;
+}
+
+
+/* CHAT */
+
+#chatWindow{
+
+    position:fixed;
+
+    bottom:100px;
+
+    right:25px;
+
+    width:350px;
+
+    height:500px;
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+
+    display:none;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    z-index:1000;
+}
+
+
+#chatHeader{
+
+    background:#2f80ed;
+
+    color:white;
+
+    padding:15px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-weight:bold;
+}
+
+
+#closeChat{
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+}
+
+
+#chatMessages{
+
+    flex:1;
+
+    padding:15px;
+
+    overflow-y:auto;
+}
+
+
+.botMessage{
+
+    background:#f1f1f1;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    margin-bottom:10px;
+}
+
+
+.userMessage{
+
+    background:#2f80ed;
+
+    color:white;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    margin-bottom:10px;
+
+    text-align:right;
+}
+
+
+#chatInputArea{
+
+    display:flex;
+
+    gap:10px;
+
+    padding:10px;
+
+    border-top:1px solid #ddd;
+}
+
+
+#chatInput{
+
+    flex:1;
+
+    padding:10px;
+}
+
+#navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 40px;
+
+    background:white;
+
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+}
+
+.logoContainer{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+#logo{
+
+    width:100px;
+
+    height:100px;
+
+    object-fit:contain;
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:30px;
+
+    margin:0;
+
+    padding:0;
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#005EB8;
+
+    font-weight:600;
+}
+
+nav a:hover{
+
+    color:#4DB5FF;
+}
+
+#funciones{
+
+    padding:80px 10%;
+
+    background:#F4F7FB;
+
+    text-align:center;
+}
+
+
+#funciones h2{
+
+    color:#003E7E;
+
+    font-size:40px;
+
+    margin-bottom:50px;
+}
+
+
+.cards{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+}
+
+
+.card{
+
+    background:white;
+
+    width:300px;
+
+    padding:40px 30px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+}
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(0,94,184,0.15);
+}
+
+
+.icon{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+}
+
+
+.card h3{
+
+    color:#005EB8;
+
+    margin-bottom:15px;
+
+    font-size:28px;
+}
+
+
+.card p{
+
+    color:#4B5563;
+
+    line-height:1.7;
+}
+
+#infoPanel{
+
+    position:absolute;
+
+    top:350px;
+
+    left:30px;
+
+    width:380px;
+
+    height:580px;
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+    display:none;
+
+    overflow:hidden;
+
+    z-index:999;
+
+}
+
+#infoHeader{
+
+    background:#005EB8;
+
+    color:white;
+
+    padding:12px 15px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+#closeInfo{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+}
+
+#infoContent{
+
+    padding:18px;
+
+    color:#333;
+
+    line-height:1.6;
+
+    flex:1;
+
+    overflow-y:auto;
+
+    max-height:240px;
+
+}
+
+.botMessage h1{
+
+    font-size:20px;
+    color:#005EB8;
+    margin-top:10px;
+    margin-bottom:8px;
+
+}
+
+.botMessage h2{
+
+    font-size:18px;
+    color:#005EB8;
+    margin-top:10px;
+    margin-bottom:8px;
+
+}
+
+.botMessage h3{
+
+    font-size:20px;
+    color:#005EB8;
+    margin-top:8px;
+    margin-bottom:6px;
+
+}
+
+.botMessage ul{
+
+    padding-left:16px;
+    margin-top:10px;
+
+}
+
+.botMessage li{
+
+    margin-bottom:5px;
+
+}
+
+.botMessage strong{
+
+    color:#005EB8;
+
+}
+
+.botMessage p{
+
+    line-height:1.6;
+
+}
+
+/*============================*/
+/* PANEL DE APRENDIZAJE */
+/*============================*/
+
+#moduleStatus{
+
+    background:#F5F8FC;
+
+    text-align:center;
+
+    padding:12px;
+
+    font-weight:600;
+
+    color:#555;
+
+    border-bottom:1px solid #E5E7EB;
+
+}
+
+#moduleActions{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    padding:18px;
+
+}
+
+/*========================================*/
+/* BOTONES DEL PANEL */
+/*========================================*/
+
+#moduleActions{
+
+    display:flex;
+
+    justify-content:space-evenly;
+
+    align-items:center;
+
+    padding:18px 10px;
+
+    border-top:1px solid #E8EEF7;
+
+    border-bottom:1px solid #E8EEF7;
+
+    background:white;
+    flex-direction:row;
+
+}
+
+/* Cada botón */
+
+.actionButton{
+
+    flex:1;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    transition:.25s;
+
+}
+
+/* Animación */
+
+.actionButton:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* Cuadro azul del icono */
+
+.actionIcon{
+
+    width:68px;
+
+    height:68px;
+
+    border-radius:18px;
+
+    background:#EEF6FF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    transition:.25s;
+
+}
+
+/* Hover */
+
+.actionButton:hover .actionIcon{
+
+    background:#D8ECFF;
+
+    transform:scale(1.08);
+
+}
+
+/* Texto */
+
+.actionText{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#005EB8;
+
+    text-align:center;
+
+}
+
+
+/*============================*/
+/* LEYENDA */
+/*============================*/
+
+#legend{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    margin-top:20px;
+
+    margin-bottom:40px;
+
+}
+
+.legendItem{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:600;
+
+    color:#444;
+
+}
+
+.legendCircle{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    display:inline-block;
+
+}
+
+.completed{
+
+    background:#22C55E;
+
+}
+
+.available{
+
+    background:#00BFFF;
+
+}
+
+.locked{
+
+    background:#E53935;
+
+}
+
+/*==================================*/
+/* PANEL DE EVALUACIÓN */
+/*==================================*/
+
+#quizPanel{
+
+    position:fixed;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:650px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+    overflow:hidden;
+
+    display:none;
+
+    z-index:5000;
+
+}
+
+#quizHeader{
+
+    background:#005EB8;
+
+    color:white;
+
+    padding:18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+#quizBody{
+
+    padding:30px;
+
+}
+
+#quizModule{
+
+    color:#005EB8;
+
+    margin-top:0;
+
+}
+
+
+#quizProgress{
+
+    margin:20px 0;
+
+    font-weight:bold;
+
+    color:#666;
+
+}
+
+#quizQuestion{
+
+    font-size:22px;
+
+    margin-bottom:25px;
+
+}
+
+#quizOptions{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+#nextQuestion{
+
+    background:#005EB8;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+}
+
+
+/*================================*/
+/* BARRA DE PROGRESO */
+/*================================*/
+
+#progressBar{
+
+    width:100%;
+
+    height:12px;
+
+    background:#E5E7EB;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:10px;
+
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:#005EB8;
+
+    transition:.35s;
+
+}
+
+#progressText{
+
+    font-weight:600;
+
+    color:#555;
+
+}
+
+.optionBtn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:2px solid #D1D5DB;
+
+    background:white;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    font-size:16px;
+
+    transition:.25s;
+
+}
+
+.optionBtn:hover{
+
+    background:#EEF6FF;
+
+    border-color:#005EB8;
+
+}
+
+.optionBtn.selected{
+
+    background:#005EB8;
+
+    color:white;
+
+    border-color:#005EB8;
+
+}
+
+/*========================================*/
+/* PANEL DE RESULTADOS */
+/*========================================*/
+
+#resultPanel{
+
+    position:fixed;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:500px;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+    display:none;
+
+    z-index:6000;
+
+}
+
+#resultHeader{
+
+    background:#005EB8;
+
+    color:white;
+
+    padding:18px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    text-align:center;
+
+}
+
+#resultBody{
+
+    padding:35px;
+
+    text-align:center;
+
+}
+
+#resultIcon{
+
+    font-size:70px;
+
+    margin-bottom:15px;
+
+}
+
+#resultStatus{
+
+    color:#005EB8;
+
+    margin-bottom:15px;
+
+}
+
+#resultScore{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:#27AE60;
+
+    margin:10px 0;
+
+}
+
+#resultCorrect{
+
+    color:#555;
+
+    margin-bottom:30px;
+
+}
+
+#continueBtn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#005EB8;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#continueBtn:hover{
+
+    background:#003E7E;
+
+}

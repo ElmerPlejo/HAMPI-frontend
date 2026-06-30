@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>HAMPI | Explorador Biomédico 3D</title>
+
+    <!-- Fuente -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<body>
+
+
+    <!-- ===================================== -->
+    <!-- BARRA DE NAVEGACIÓN -->
+    <!-- ===================================== -->
+
+    <header id="navbar">
+
+        <div class="logoContainer">
+
+            <img src="logo.png"
+                 alt="Logo HAMPI"
+                 id="logo">
+
+            <div>
+
+                <h1>HAMPI</h1>
+
+                <span>
+
+                    Plataforma de aprendizaje inmersivo
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <ul>
+
+                <li>
+
+                    <a href="#hero">
+
+                        Inicio
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#explorador">
+
+                        Explorador
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#funciones">
+
+                        Funciones
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#footer">
+
+                        Contacto
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ===================================== -->
+    <!-- HERO -->
+    <!-- ===================================== -->
+
+    <section id="hero">
+
+        <div class="heroText">
+
+            <h2>
+
+                Aprende Ingeniería Biomédica
+                explorando equipos médicos en 3D
+
+            </h2>
+
+
+            <p>
+
+                Interactúa con modelos tridimensionales,
+                identifica componentes clave y consulta a Hampicito,
+                tu asistente inteligente especializado en tecnología biomédica.
+
+            </p>
+
+
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- EXPLORADOR -->
+    <!-- ===================================== -->
+
+    <section id="explorador">
+
+        <div class="sectionTitle">
+
+            <h2>
+
+                Ventilador Mecánico HAMILTON-C3
+
+            </h2>
+
+            <p>
+
+                Explora el equipo en tres dimensiones.
+
+            </p>
+
+        </div>
+
+
+        <div id="visorContainer">
+
+            <div id="visor3D"></div>
+
+        </div>
+        <div id="legend">
+
+    <div class="legendItem">
+
+        <span class="legendCircle completed"></span>
+
+        <span>Módulo completado</span>
+
+    </div>
+
+    <div class="legendItem">
+
+        <span class="legendCircle available"></span>
+
+        <span>Módulo disponible</span>
+
+    </div>
+
+    <div class="legendItem">
+
+        <span class="legendCircle locked"></span>
+
+        <span>Módulo bloqueado</span>
+
+    </div>
+
+</div>
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- FUNCIONES -->
+    <!-- ===================================== -->
+
+    <section id="funciones">
+
+        <h2>
+
+            ¿Qué puedes hacer con HAMPI?
+
+        </h2>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="icon">
+
+                    🔍
+
+                </div>
+
+                <h3>
+
+                    Explorar
+
+                </h3>
+
+                <p>
+
+                    Observa equipos biomédicos desde cualquier ángulo.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="icon">
+
+                    📚
+
+                </div>
+
+                <h3>
+
+                    Aprender
+
+                </h3>
+
+                <p>
+
+                    Descubre la función de cada componente.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="icon">
+
+                    🤖
+
+                </div>
+
+                <h3>
+
+                    Consultar
+
+                </h3>
+
+                <p>
+
+                    Realiza preguntas a Hampicito y obtén respuestas inmediatas.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- BOTÓN HAMPICITO -->
+    <!-- ===================================== -->
+
+    <button id="chatToggle">
+
+        🤖
+
+    </button>
+
+
+
+    <!-- ===================================== -->
+    <!-- CHAT -->
+    <!-- ===================================== -->
+
+    <div id="chatWindow">
+
+
+        <div id="chatHeader">
+
+            Hampicito 🤖
+
+
+            <button id="closeChat">
+
+                ✕
+
+            </button>
+
+        </div>
+
+
+
+        <div id="chatMessages">
+
+
+            <div class="botMessage">
+
+                Hola 👋
+
+                Soy Hampicito.
+
+                Estoy listo para ayudarte a comprender
+                el funcionamiento del ventilador mecánico.
+
+            </div>
+
+
+        </div>
+
+
+
+        <div id="chatInputArea">
+
+
+            <input type="text"
+                   id="chatInput"
+                   placeholder="Escribe tu pregunta...">
+
+
+            <button id="sendBtn">
+
+                Enviar
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- FOOTER -->
+    <!-- ===================================== -->
+
+    <footer id="footer">
+
+
+        <div class="footerLogo">
+
+            HAMPI
+
+        </div>
+
+
+        <p>
+
+            Plataforma educativa orientada al aprendizaje
+            inmersivo de equipos biomédicos.
+
+        </p>
+
+
+        <p>
+
+            © 2026 HAMPI.
+            Todos los derechos reservados.
+
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- ===================================== -->
+    <!-- SCRIPT -->
+    <!-- ===================================== -->
+
+<div id="infoPanel">
+
+    <div id="infoHeader">
+
+        <span id="infoTitle">
+            Módulo
+        </span>
+
+        <button id="closeInfo">
+            ✖
+        </button>
+
+    </div>
+
+    <!-- Estado del módulo -->
+
+    <div id="moduleStatus">
+
+        🟡 Pendiente
+
+    </div>
+
+    <!-- Botones -->
+
+<div id="moduleActions">
+
+    <button id="learnBtn" class="actionButton">
+
+        <span class="actionIcon">📖</span>
+
+        <span class="actionText">
+
+            Aprender
+
+        </span>
+
+    </button>
+
+    <button id="askBtn" class="actionButton">
+
+        <span class="actionIcon">🤖</span>
+
+        <span class="actionText">
+
+            Hampicito
+
+        </span>
+
+    </button>
+
+    <button id="quizBtn" class="actionButton">
+
+        <span class="actionIcon">📝</span>
+
+        <span class="actionText">
+
+            Evaluación
+
+        </span>
+
+    </button>
+
+</div>
+
+    <!-- Aquí aparecerá la información -->
+
+    <div id="infoContent">
+
+    </div>
+
+</div>
+
+
+<div id="quizPanel">
+
+    <div id="quizHeader">
+
+        <span>
+
+            Evaluación
+
+        </span>
+
+        <button id="closeQuiz">
+
+            ✖
+
+        </button>
+
+    </div>
+
+    <div id="quizBody">
+
+        <h2 id="quizModule">
+
+            Módulo
+
+        </h2>
+
+        <div id="quizProgress">
+
+        <div id="progressBar">
+
+        <div id="progressFill"></div>
+
+        </div>
+
+        <span id="progressText">
+
+        Pregunta 1 de 5
+
+        </span>
+
+        </div>
+
+        <div id="quizQuestion">
+
+            Aquí aparecerá la pregunta.
+
+        </div>
+
+        <div id="quizOptions">
+
+        </div>
+
+        <button id="nextQuestion">
+
+            Siguiente
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<div id="resultPanel">
+
+    <div id="resultHeader">
+
+        🏆 Resultado de la evaluación
+
+    </div>
+
+    <div id="resultBody">
+
+        <div id="resultIcon">
+
+            🎉
+
+        </div>
+
+        <h2 id="resultStatus">
+
+            APROBADO
+
+        </h2>
+
+        <p id="resultScore">
+
+            80 %
+
+        </p>
+
+        <p id="resultCorrect">
+
+            4 de 5 respuestas correctas
+
+        </p>
+
+        <button id="continueBtn">
+
+            Continuar
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+    <script type="module"  src="script.js">
+
+    </script>
+
+
+<div id="resultPanel">
+
+    <div id="resultHeader">
+
+        🏆 Resultado
+
+    </div>
+
+    <div id="resultBody">
+
+        <h2 id="resultStatus">
+
+            Aprobado
+
+        </h2>
+
+        <p id="resultScore">
+
+            80%
+
+        </p>
+
+        <p id="resultCorrect">
+
+            4 de 5 respuestas correctas
+
+        </p>
+
+        <button id="continueBtn">
+
+            Continuar
+
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
